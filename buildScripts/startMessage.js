@@ -1,5 +1,5 @@
-// import chalk from 'chalk';
-const chalk = require('chalk');
+import chalk from 'chalk'; // ES6 way
+// const chalk = require('chalk'); // classical node way
 
 /* eslint-disable no-console */
 

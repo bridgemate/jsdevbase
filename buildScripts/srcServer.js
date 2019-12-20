@@ -1,11 +1,11 @@
 //this file  will configure our webserver that will serve up the files in the src directory
 
-// import express from 'express';
-// import path from 'path';
-// import open from 'open';
-const express = require('express');
-const path = require('path');
-const open = require('open');
+import express from 'express';
+import path from 'path';
+import open from 'open';
+// const express = require('express');
+// const path = require('path');
+// const open = require('open');
 
 //*after configuring in config file, set up dev server to serve webpack bundle
 // import webpack from 'webpack';
