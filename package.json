@@ -3,8 +3,12 @@
   "version": "1.0.0",
   "description": "JavaScript development environment",
   "scripts": {
-    "src-server": "node buildScripts/srcServer.js",
-    "lt": "lt --port 3000"
+    "open:src": "node buildScripts/srcServer.js",
+    "prestart": "node buildScripts/startMessage.js",
+    "start": "node buildScripts/srcServer.js",
+    "poststart": "node buildScripts/postMessage.js",
+    "localtunnel": "lt --port 3000 --subdomain folksbridge",
+    "share": "npm-run-all --parallel open:src localtunnel"
   },
   "author": "Brandi Apetsi",
   "license": "MIT",
