@@ -19,7 +19,7 @@ export default {
     publicPath: '/',
     filename: 'bundle.js',
   },
-  // commented out for this config to be used by express srcServer.js
+  // commented out for this config to be integrated express srcServer.js
   // devServer: {
   //   contentBase: path.resolve(__dirname, 'src'),
   // },

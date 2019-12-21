@@ -6,9 +6,12 @@
     "open:src": "babel-node buildScripts/srcServer.js",
     "prestart": "babel-node buildScripts/startMessage.js",
     "start": "babel-node buildScripts/srcServer.js",
+    "start:lint": "npm-run-all --parallel open:src lint:watch",
     "poststart": "babel-node buildScripts/postMessage.js",
     "localtunnel": "lt --port 3000 --subdomain folksbridge",
-    "share": "npm-run-all --parallel open:src localtunnel"
+    "share": "npm-run-all --parallel open:src localtunnel",
+    "lint": "esw webpack.config.* src/index.js buildScripts --color",
+    "lint:watch": "npm run lint -- --watch"
   },
   "author": "Brandi Apetsi",
   "license": "MIT",
