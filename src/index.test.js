@@ -11,7 +11,7 @@ describe("First dummy test", () =>{
 
 describe('index.html', () => {
   // callback function in jsdom.env causes asynchronous code so that we need pass "done"
-  it('should say World', (done) => {
+  it('should have h1 that says Users', (done) => {
     // read the html file into a index object
     const index = fs.readFileSync('./src/index.html', "utf-8");
 
@@ -19,7 +19,7 @@ describe('index.html', () => {
     // if any of the js files has fetch call, isomorphic-fetch npm package need to be used
     jsdom.env(index, function(err, window) {
       const h1 = window.document.getElementsByTagName('h1')[0];
-      expect(h1.innerHTML).to.equal("World");
+      expect(h1.innerHTML).to.equal("Users");
       done();
       window.close();
     });

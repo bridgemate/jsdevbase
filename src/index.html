@@ -6,10 +6,26 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!-- polyfill "fetch" only for browers that need it, provied by polyfill.io -->
+  <!-- <script src="https://polyfill.io/v3/polyfill.min.js?features=fetch"></script>
+   -->
   <title>Document</title>
 </head>
 <body>
-  <h1>World</h1>
+  <h1>Users</h1>
+  <table>
+    <thead>
+      <th>&nbsp;</th>
+      <th>ID</th>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Email</th>
+    </thead>
+    <tbody id="users">
+
+    </tbody>
+  </table>
+
   <!-- per the webpack config file, this is where the bundles will output from memory -->
   <script src="bundle.js"></script>
 </body>

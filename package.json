@@ -6,18 +6,29 @@
     "open:src": "babel-node buildScripts/srcServer.js",
     "prestart": "babel-node buildScripts/startMessage.js",
     "start0": "babel-node buildScripts/srcServer.js",
-    "start": "npm-run-all --parallel open:src lint:watch test:watch",
+    "start": "npm-run-all --parallel open:src lint:watch test:watch start-mockapi",
     "poststart": "babel-node buildScripts/postMessage.js",
     "localtunnel": "lt --port 3000 --subdomain folksbridge",
     "share": "npm-run-all --parallel open:src localtunnel",
     "lint": "esw webpack.config.* src/index.js buildScripts --color",
     "lint:watch": "npm run lint -- --watch",
+    "generate-mock-data": "babel-node buildScripts/generateMockData",
+    "prestart-mockapi": "npm run generate-mock-data",
+    "start-mockapi": "json-server --watch src/api/db.json --port 3001",
     "test": "mocha --reporter progress buildScripts/testSetup.js \"src/**/*.test.js\"",
     "test:watch": "npm run test -- --watch"
   },
   "author": "Brandi Apetsi",
   "license": "MIT",
-  "dependencies": {},
+  "optionalDependencies": {
+    "fsevents": "*"
+  },
+  "dependencies": {
+    "babel-node": "0.0.1-security",
+    "colors": "^1.4.0",
+    "fsevents": "^2.1.1",
+    "whatwg-fetch": "1.0.0"
+  },
   "devDependencies": {
     "babel-cli": "6.16.0",
     "babel-core": "6.17.0",
