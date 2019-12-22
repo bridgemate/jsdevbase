@@ -1,3 +1,6 @@
+//per the webpack.config file, this is the entry point of the application
+import './index.css';
+
 /* eslint-disable no-console */
 
 import { getUsers, deleteUser} from './api/userApi';
@@ -44,11 +47,11 @@ getUsers().then( result => {
   }
 
 
-  // Method 1: attach event listner for each item - bad performance for large item list
-  const deleteLinks = global.document.getElementsByClassName('deleteUser');
+  // // Method 1: attach event listner for each item - bad performance for large item list
+  // const deleteLinks = global.document.getElementsByClassName('deleteUser');
 
-  //Must use array.from to create a real array form a DOM collection
-  //getElementsByClassName only returns an array-like object
+  // //Must use array.from to create a real array form a DOM collection
+  // //getElementsByClassName only returns an array-like object
 
   // Array.from(deleteLinks, link => {
   //   link.onclick = function(event) {
@@ -67,10 +70,10 @@ getUsers().then( result => {
 })
 
 // Method 2: using row id, the same issue as mothod 1
-global.delUser =  function (id) {
-  // deleteUser(id);
-  // const row = document.getElementById(id);
-  // row.parentNode.removeChild(row);
-  // // row.style.display = 'none'
-}
+// global.delUser =  function (id) {
+//   deleteUser(id);
+//   const row = document.getElementById(id);
+//   row.parentNode.removeChild(row);
+//   // row.style.display = 'none'
+// }
 

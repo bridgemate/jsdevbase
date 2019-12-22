@@ -1,8 +1,23 @@
-<!-- //source code goes here -->
+<!-- This template uses ejs and htmlWebpackPlugin to generate a different index.html for each environment.
+  htmlWebpackPlugin will dynamically add references to the scripts and styles that it bundles to this file.
+  http://www.embeddedjs.com
+  using with ejs: github.com/jaketrend/html-webpack-template/blob/master/index.ejs
+ -->
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- trackjs begin -->
+    <% if(htmlWebpackPlugin.options.trackJSToken) { %>
+
+      <script src="https://cdn.trackjs.com/agent/v3/latest/t.js"></script>
+      <script>
+        window.TrackJS && TrackJS.install({
+          token: '<%=htmlWebpackPlugin.options.trackJSToken%>'
+        });
+        </script>
+    <% } %>
+    <!-- trackjs end -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -27,6 +42,6 @@
   </table>
 
   <!-- per the webpack config file, this is where the bundles will output from memory -->
-  <script src="bundle.js"></script>
+  <!-- <script src="bundle.js"></script> -->
 </body>
 </html>
