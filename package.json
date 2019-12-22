@@ -31,7 +31,6 @@
   "dependencies": {
     "babel-node": "0.0.1-security",
     "colors": "^1.4.0",
-    "fsevents": "^2.1.1",
     "whatwg-fetch": "1.0.0"
   },
   "devDependencies": {
